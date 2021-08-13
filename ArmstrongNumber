@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+public class ArmstrongSayi {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Bir ssayı giriniz : " );
+		int sayi = input.nextInt();
+		int basamakSayisi = 0;
+		int tempSayi = sayi; // tempSayi değişkeni sayıyı tekrar kullanabilmemiz içindir.
+		int basamakDegeri;
+		int sonuc = 0;
+		
+		while(tempSayi != 0) {
+			tempSayi /= 10;
+			basamakSayisi++;
+		}
+		
+		tempSayi = sayi; // tempSayi değişkeni sayıyı tekrar kullanabilmemiz içindir.
+		
+		while(tempSayi != 0) {
+			basamakDegeri = tempSayi % 10;
+			int basamakKati = 1; // 1*1*1*1 = !^4;
+			for(int i = 1; i <= basamakSayisi; i++) {
+				basamakKati *= basamakDegeri;
+			}
+			sonuc += basamakKati;
+			tempSayi /= 10;
+			
+		}
+		
+		if(sonuc == sayi) {
+			System.out.println(sayi + " sayısı Armstrong Sayıdır.");
+		}else {
+			System.out.println(sayi + " sayısı Armstrong Sayı değildir.");
+		}
+		
+		
+		
+		/*
+		 Bir sayının kaç basamaklı olduğunu bulmamız için gereken döngü ;
+		 int a = 2451;
+		 int bsamak sayısı = 0;
+		 
+		 2451 / 10 = 245;
+		 245 / 10 = 24;
+		 24 / 10 = 2;
+		 2 / 10 = 0;
+		 0 / 10 = 0; bu aşamada zaten döngüye girmez
+		 
+		 while(a != 0){
+		 a /= 10;
+		 basmakSayısı++;
+		 
+		 }
+		 
+		 bir sayının basamağındaki değerleri bulmak için gerekn döngü;
+		 
+		 sayımız 2451 olsun; 
+		 int basamakDeğeri = 0;
+		 
+		 2451 % 10 = 1;
+		 245 % 10 = 5;
+		 24 % 10 = 4;
+		 2 % 10 = 2;
+		 0 % 10 = 0;
+		 
+		 while( a != 0){
+		 basamakDegeri = a %= 10;
+		
+		 
+		 }
+		
+		int sub = 2, sup = 3;
+		int result = 1;
+		for(int i = 1; i <= sup; i++) {
+			result *= sub;
+		}
+		System.out.println(result);
+		*/
+
+	}
+
+}
