@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class FibonacciSayisi {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Fibonacci serisi kaç elemanlı olsun? : ");
+		int eleman = input.nextInt();
+		int a = 1;
+		int b = 1;
+		int c;
+		
+		System.out.print(eleman + "elemanlı fibonacci serisi : " + a + " " + b + " ");
+		for(int i = 2; i <= eleman; i++) {
+			c = a + b;
+			a = b;
+			b = c;
+			System.out.print(c + " ");
+		}
+		
+		
+
+	}
+
+}
